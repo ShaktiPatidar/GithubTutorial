@@ -1,0 +1,119 @@
+mkdir project
+: makes a folder project
+
+cd project
+: changes directory to project i.e gets inside the project folder
+
+ls
+: lists content of folder
+
+git init
+: initialises a git file
+
+ls -a
+: showshidden files basically git file and others starting with .(dot)
+
+ls .git
+:lists what is inside the git file
+
+touch names.txt
+: makes names.txt file in project folder
+
+git status
+: shows names.txt in red as it is untracked (unphotographed guests)
+
+git add names.txt
+: tracks the names.txt (calls unphotographed guests on stage)
+
+git status:
+: shows names.txt  in green as it is now tracked (on stage)
+
+git commit -m"Names.txt is added"
+: (Photograph clicked )
+
+git status
+: nothing (no unphotographed guests left)
+
+vi names.txt
+: opens names.txt to edit
+
+cat names.txt
+: displays content of names.txt
+
+git status
+: displays "modified: names.txt" in red (not on stage)
+
+git add .
+: tracks the modifications done (call on stage)
+
+git status
+: displays "modified: names.txt" in green (on stage)
+
+git restore --staged names.txt
+: untracks modifications (removed from stage without taking photograph)
+
+git status:
+: again displayed in red (not on stage)
+
+git add names.txt
+git commit -m"Modifications Done!"
+
+git log
+: History displayed
+
+rm -rf names.txt
+: deletes the text file
+
+git add .
+git commit -m "names.txt deleted!"
+git log
+
+git reset (hash ID(say123) of change made to be restored)
+: deletes all changes above i.e. after the given ID(123)
+
+git log
+
+git status
+: deleted change is again untracked now(in red)
+
+
+git add .
+git status
+git touch surnames.txt
+git houses.txt
+vi surnames.txt (i->Patidar->Esc->:x)
+git add .
+git status
+
+git stash
+: all staged changes are stashes (guests on stage are sent backstage)
+
+So, project still looks same as before given hashID with after changes saved in stash
+
+git status
+git log
+cat names.txt
+: names.txt is empty as it was before given hashID
+
+git stash pop
+: all changes are called back to stage
+
+git add .
+git stash
+git stash clear
+: deletes changes permanently (backstage cleared)
+
+
+****
+	//To access new repository
+:Launch Git Bash
+cd "C:\Program Files\Git"
+:Move to local Git Repo: 
+git init
+Initialise git repo 
+git remote -v
+:check if any remote repo is connected to Git local repo
+git remote add origin *URL
+:open GitHub and copy URL of forked repo: 
+git remote -v
+
